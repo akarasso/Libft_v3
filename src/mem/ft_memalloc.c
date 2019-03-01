@@ -1,6 +1,6 @@
-#include <stdlib.h>
+#include "ft_libft.h"
 
-void *ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
 	void *ptr;
 	if (!(ptr = malloc(size)))
