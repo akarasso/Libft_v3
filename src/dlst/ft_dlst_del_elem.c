@@ -1,6 +1,6 @@
 #include "ft_libft.h"
 
-void ft_dlst_del_elem(t_dlst *parent, void *elem, void (*func)())
+void	ft_dlst_del_elem(t_dlst *parent, void *elem, void (*func)())
 {
 	t_dlst_elem *ptr;
 

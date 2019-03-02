@@ -1,6 +1,6 @@
 #include "ft_libft.h"
 
-void ft_dlst_del(t_dlst **parent, void (*func)())
+void	ft_dlst_del(t_dlst **parent, void (*func)())
 {
 	t_dlst_elem *ptr;
 	t_dlst_elem *next;
@@ -12,7 +12,7 @@ void ft_dlst_del(t_dlst **parent, void (*func)())
 		{
 			next = ptr->next;
 			func((void*)ptr);
-			ptr = ptr->next;
+			ptr = next;
 		}
 		free(*parent);
 		*parent = 0x0;

@@ -3,7 +3,6 @@
 void 	*ft_dlst_push(t_dlst *parent, void *child)
 {
 	t_dlst_elem *ptr;
-	t_dlst_elem *last;
 
 	ptr = child;
 	if (!child)

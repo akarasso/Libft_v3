@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "ft_libft.h"
+
 typedef struct	s_elem_test
 {
 	struct s_elem_test	*next;
@@ -64,7 +65,8 @@ int 	ft_test_push(t_dlst *list)
 		assert(elem->next == old_elem);
 		assert(index == list->len);
 		old_elem = elem;
-		printf("Len dlst: %lu Elem: .value '%s' .address:%p .next:%p\n", list->len, elem->s, elem, elem->next);
+		printf("Len dlst: %lu Elem: .value '%s' .address:%p .next:%p\n",
+			list->len, elem->s, elem, elem->next);
 		ptr++;
 	}
 	return (0);
@@ -88,7 +90,8 @@ int 	ft_test_pushback(t_dlst *list)
 		assert(elem->prev == old_elem);
 		assert(index == list->len);
 		old_elem = elem;
-		printf("Len dlst: %lu Elem: .value '%s' .address:%p .prev:%p\n", list->len, elem->s, elem, elem->prev);
+		printf("Len dlst: %lu Elem: .value '%s' .address:%p .prev:%p\n",
+			list->len, elem->s, elem, elem->prev);
 		ptr++;
 	}
 	return (0);
@@ -97,8 +100,6 @@ int 	ft_test_pushback(t_dlst *list)
 int 	ft_test_del_elem(t_dlst *list)
 {
 	t_elem_test		*elemfirst, *elemmiddle, *elemlast;
-	size_t			index;
-
 
 	elemfirst = ft_dlst_pushback(list, create_elem(tests[0]));
 	elemmiddle = ft_dlst_pushback(list, create_elem(tests[1]));
@@ -127,24 +128,33 @@ int	ft_test_del(t_dlst *list)
 {
 	ft_dlst_del(&list, free_elem);
 	assert(list == 0x0);
+  return (0);
 }
 
 int main(int argc, char **argv)
 {
 	t_dlst *list;
 
+	(void)argc;
+	(void)argv;
 	list = 0x0;
 	printf("Start test on dlst\n");
 	if (!ft_dlst_new(&list))
 	{
 		printf("ft_dlst_new:OK\n");
-		ft_test_push(list) ? printf("ft_test_push:KO\n") : printf("ft_test_push:OK\n");
-		ft_test_clear(list) ? printf("ft_test_clear:KO\n") : printf("ft_test_clear:OK\n");
-		ft_test_pushback(list) ? printf("ft_test_pushback:KO\n") : printf("ft_test_pushback:OK\n");
+		ft_test_push(list);
+		printf("ft_test_push:OK\n");
 		ft_test_clear(list);
-		ft_test_del_elem(list) ? printf("ft_test_del_elem:KO\n") : printf("ft_test_del_elem:OK\n");
-		ft_test_del(list) ? printf("ft_test_del:KO\n") : printf("ft_test_del:OK\n");
+		printf("ft_test_clear:OK\n");
+		ft_test_pushback(list);
+		printf("ft_test_pushback:OK\n");
+		ft_test_clear(list);
+		ft_test_del_elem(list);
+		printf("ft_test_del_elem:OK\n");
+		ft_test_del(list);
+		printf("ft_test_del:OK\n");
 	}
-	else printf("ft_dlst_new:KO\n");
+	else
+		printf("ft_dlst_new:KO\n");
 	return (0);
 }
