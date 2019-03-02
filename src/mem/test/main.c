@@ -35,6 +35,22 @@ int	ft_test_memset()
 	return (0);
 }
 
+int ft_test_memchr()
+{
+  char  buffer[] = {'a', 'b', 'c', 'd', '\0'};
+  char  *ptr;
+
+  ptr = ft_memchr(buffer, 'a', 5);
+  assert(ptr && *ptr == 'a');
+  ptr = ft_memchr(buffer, 'b', 5);
+  assert(ptr && *ptr == 'b');
+  ptr = ft_memchr(buffer, 'c', 5);
+  assert(ptr && *ptr == 'c');
+  ptr = ft_memchr(buffer, 'd', 5);
+  assert(ptr && *ptr == 'd');
+  return (0);
+}
+
 int main(int argc, char **argv)
 {
 	(void)argc;
@@ -42,5 +58,6 @@ int main(int argc, char **argv)
 
 	ft_test_memalloc() ? printf("ft_test_memalloc:KO\n") : printf("ft_test_memalloc:OK\n");
 	ft_test_memset() ? printf("ft_test_memset:KO\n") : printf("ft_test_memset:OK\n");
+  ft_test_memchr() ? printf("ft_test_memchr:KO\n") : printf("ft_test_memchr:OK\n");
 	return 0;
 }
