@@ -1,4 +1,4 @@
-#include "ft_char.h"
+#include "ft_libft.h"
 
 int		ft_strdigit(char *s)
 {

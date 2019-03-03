@@ -1,5 +1,4 @@
-#include "ft_mem.h"
-#include "ft_str.h"
+#include "ft_libft.h"
 
 char	*ft_strndup(char *s, int len)
 {

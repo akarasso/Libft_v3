@@ -1,4 +1,4 @@
-#include "ft_str.h"
+#include "ft_libft.h"
 
 int		ft_str_onlychr(char *str, char *valid)
 {

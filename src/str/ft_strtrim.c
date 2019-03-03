@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_mem.h"
-#include "ft_char.h"
-#include "ft_str.h"
+#include "ft_libft.h"
 
 static int	is_space(char c)
 {
