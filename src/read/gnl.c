@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoax <hoax@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akarasso <akarasso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 06:56:58 by akarasso          #+#    #+#             */
-/*   Updated: 2018/09/10 14:59:53 by hoax             ###   ########.fr       */
+/*   Updated: 2019/03/24 19:32:53 by akarasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ int					gnl(const int fd, char **line)
 	int					ret;
 	int					len;
 
-	if (!(cnl = get_buffer_canal(&buffs, fd)) || !(*line = ft_strnew(0)))
+	if (!(cnl = get_buffer_canal(&buffs, fd)))
+		return (-1);
+	if (!(*line = ft_strnew(0)))
 		return (-1);
 	if ((len = ft_strlen(cnl->buff)) > 0)
 		if (buff_concat(line, cnl, '\n'))

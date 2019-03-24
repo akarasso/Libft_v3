@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_3strjoin.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akarasso <akarasso@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/24 19:33:14 by akarasso          #+#    #+#             */
+/*   Updated: 2019/03/24 19:34:17 by akarasso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_libft.h"
 
-static void	ft_3strjoinfunc(char *s1, char *s2, char *s3, char flag)
+static void		ft_3strjoinfunc(char *s1, char *s2, char *s3, char flag)
 {
 	if (s1 && (flag & LEFT))
 		free(s1);
@@ -10,7 +22,7 @@ static void	ft_3strjoinfunc(char *s1, char *s2, char *s3, char flag)
 		free(s3);
 }
 
-char	*ft_3strjoin(char *s1, char *s2, char *s3, char flag)
+char			*ft_3strjoin(char *s1, char *s2, char *s3, char flag)
 {
 	char	*new;
 	int		len;

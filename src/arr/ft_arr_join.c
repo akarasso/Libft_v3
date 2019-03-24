@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_arr_join.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akarasso <akarasso@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/24 19:22:48 by akarasso          #+#    #+#             */
+/*   Updated: 2019/03/24 19:26:59 by akarasso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_libft.h"
 
 static void		ft_arr_del_parent(t_arr *arr)
@@ -39,6 +51,5 @@ t_arr			*ft_arr_join(t_arr *arr1, t_arr *arr2)
 		ft_arr_del_parent(arr1);
 		return (arr2);
 	}
-	else
-		return ft_arr_newjoin(arr1, arr2);
+	return (ft_arr_newjoin(arr1, arr2));
 }

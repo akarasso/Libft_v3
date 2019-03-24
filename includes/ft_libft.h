@@ -1,5 +1,17 @@
-#ifndef FT_LILBFT_H
-# define FT_LILBFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_libft.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akarasso <akarasso@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/24 19:19:29 by akarasso          #+#    #+#             */
+/*   Updated: 2019/03/24 19:36:29 by akarasso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_LIBFT_H
+# define FT_LIBFT_H
 
 # include <stddef.h>
 # include <unistd.h>
@@ -26,18 +38,18 @@ typedef struct	s_dlst_elem
 
 typedef struct	s_dlst
 {
-    t_dlst_elem		*first;
+	t_dlst_elem		*first;
 	t_dlst_elem		*last;
-    size_t			len;
+	size_t			len;
 }				t_dlst;
 
 typedef struct	s_arr
 {
-  void			*first;
-  void			*last;
-  void			**content;
-  size_t		len;
-  size_t		max;
+	void		*first;
+	void		*last;
+	void		**content;
+	size_t		len;
+	size_t		max;
 }				t_arr;
 
 /*
@@ -62,13 +74,12 @@ int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
 
-
 /*
 ** Dlst
 */
 
-void 			*ft_dlst_push(t_dlst *parent, void *child);
-void 			*ft_dlst_pushback(t_dlst *parent, void *child);
+void			*ft_dlst_push(t_dlst *parent, void *child);
+void			*ft_dlst_pushback(t_dlst *parent, void *child);
 size_t			ft_dlst_len(t_dlst *dlst);
 int				ft_dlst_new(t_dlst **ptr);
 void			ft_dlst_del_elem(t_dlst *parent, void *elem, void (*func)());
@@ -98,7 +109,6 @@ void			ft_putstr_fd(char const *s, int fd);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 
-
 /*
 ** Mem
 */
@@ -115,7 +125,6 @@ void			ft_memdel(void **ap);
 */
 
 int				gnl(const int fd, char **line);
-
 
 /*
 **	str
@@ -158,6 +167,5 @@ char			*ft_strnjoin(char *src, int lsrc, char *right, char flag);
 void			ft_strrmvchr(char *s);
 char			*ft_strnchr(char *str, char c, int n);
 int				ft_str_onlychr(char *str, char *valid);
-
 
 #endif
