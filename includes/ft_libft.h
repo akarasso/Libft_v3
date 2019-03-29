@@ -6,7 +6,7 @@
 /*   By: akarasso <akarasso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/24 19:19:29 by akarasso          #+#    #+#             */
-/*   Updated: 2019/03/24 19:36:29 by akarasso         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:20:37 by a.karassouloff   ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,5 +167,6 @@ char			*ft_strnjoin(char *src, int lsrc, char *right, char flag);
 void			ft_strrmvchr(char *s);
 char			*ft_strnchr(char *str, char c, int n);
 int				ft_str_onlychr(char *str, char *valid);
+void			ft_strunescape(char *str);
 
 #endif
