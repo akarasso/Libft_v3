@@ -120,9 +120,9 @@ author:
 	echo $(author) > auteur
 
 clean :
-	/bin/rm -f $(OBJ_PATH)
+	rm -rf $(OBJ_PATH)
 
 fclean : clean
-	/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re : fclean all

@@ -43,8 +43,7 @@ static int			buff_concat(char **line, t_cbuffer *cnl, char c)
 	}
 	else
 	{
-		new = ft_strjoin(*line, cnl->buff);
-		ft_strdel(line);
+		new = ft_strjoin(*line, cnl->buff, LEFT);
 		*line = new;
 		ft_strclr(cnl->buff);
 		return (0);
